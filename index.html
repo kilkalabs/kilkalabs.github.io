@@ -5,431 +5,231 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KilkaLabs OU - Innovative Solutions</title>
-    <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --text-color: #333;
-            --light-gray: #f9f9f9;
-            --mid-gray: #95a5a6;
-        }
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Analytics Placeholder -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TAG_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            background-color: var(--light-gray);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        header {
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--secondary-color);
-            text-decoration: none;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav li {
-            margin-left: 1.5rem;
-        }
-
-        nav a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary-color);
-        }
-
-        .hero {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: #2980b9;
-            text-decoration: none;
-        }
-
-        section {
-            padding: 4rem 0;
-        }
-
-        section h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--secondary-color);
-        }
-
-        .about-content,
-        .services-content {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .about-text,
-        .services-text {
-            flex: 1;
-        }
-
-        .services-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-card h3 {
-            color: var(--secondary-color);
-            margin-top: 0;
-        }
-
-        .faq-item {
-            margin-bottom: 1.5rem;
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .faq-item h3 {
-            color: var(--secondary-color);
-            margin-top: 0;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        input,
-        textarea,
-        select {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: inherit;
-        }
-
-        button {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        footer {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .footer-column {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .footer-column h3 {
-            margin-top: 0;
-        }
-
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-column li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-column a {
-            color: #ecf0f1;
-            text-decoration: none;
-        }
-
-        .footer-bottom {
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav ul {
-                margin-top: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            nav li {
-                margin: 0.5rem;
-            }
-
-            .about-content,
-            .services-content {
-                flex-direction: column;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .contact-options {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1.5rem;
-                margin: 2rem 0;
-            }
-
-            .contact-option {
-                flex: 1;
-                min-width: 200px;
-                background-color: #f9f9f9;
-                padding: 1.5rem;
-                border-radius: 8px;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            }
-
-            .contact-option h4 {
-                color: var(--secondary-color);
-                margin-top: 0;
-                margin-bottom: 0.5rem;
-            }
-        }
-    </style>
+        gtag('config', 'YOUR_TAG_ID');
+    </script> -->
 </head>
 
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="index.html" class="logo">KilkaLabs</a>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <!-- <li><a href="#about">About</a></li> -->
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#support">Support</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">KilkaLabs</a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-blue-500">Home</a>
+                <div class="relative group">
+                    <button id="desktop-dropdown-button"
+                        class="text-gray-600 hover:text-blue-500 focus:outline-none flex items-center">
+                        Our Apps
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="desktop-dropdown-menu"
+                        class="absolute hidden bg-white shadow-lg rounded-md py-2 w-48 top-full left-0 z-10">
+                        <a href="https://inthemood.kilkalabs.com" target="_blank"
+                            class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">In The Mood</a>
+                    </div>
+                </div>
+                <a href="#services" class="text-gray-600 hover:text-blue-500">Services</a>
+                <a href="#support" class="text-gray-600 hover:text-blue-500">Support</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-500">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Home</a>
+            <div class="relative">
+                <button id="mobile-dropdown-button"
+                    class="w-full text-left block py-2 px-4 text-sm hover:bg-gray-200">Our Apps</button>
+                <div id="mobile-dropdown-menu" class="hidden bg-gray-100">
+                    <a href="https://inthemood.kilkalabs.com" target="_blank"
+                        class="block py-2 px-8 text-sm hover:bg-gray-200">InTheMood</a>
+                </div>
             </div>
+            <a href="#services" class="block py-2 px-4 text-sm hover:bg-gray-200">Services</a>
+            <a href="#support" class="block py-2 px-4 text-sm hover:bg-gray-200">Support</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-200">Contact</a>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Building innovative solutions for tomorrow's challenges</h1>
-            <p>KilkaLabs creates cutting-edge applications and services that help businesses and individuals thrive in a
-                digital world.</p>
-            <a href="#contact" class="cta-button">Get in Touch</a>
-        </div>
-    </section>
-    <!-- 
-    <section id="about">
-        <div class="container">
-            <h2>About KilkaLabs</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Headquartered in Tallinn, Estonia, KilkaLabs is a technology company
-                        dedicated to creating digital solutions.</p>
-                </div>
+    <main>
+        <section class="hero bg-gray-800 text-white text-center py-20">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl font-bold mb-4">Building innovative solutions for tomorrow's challenges</h1>
+                <p class="text-lg mb-8">KilkaLabs creates cutting-edge applications and services that help businesses
+                    and individuals thrive in a digital world.</p>
+                <a href="#contact"
+                    class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300">Get
+                    in Touch</a>
             </div>
-        </div>
-    </section> -->
+        </section>
 
-    <section id="services" style="background-color: white;">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-list">
-                <div class="service-card">
-                    <h3>Mobile Application Development</h3>
-                    <p>Custom iOS and Android applications built with the latest technologies to meet your business
-                        needs and provide exceptional user experiences.</p>
-                </div>
-                <div class="service-card">
-                    <h3>UX/UI Design</h3>
-                    <p>User-centered design that transforms complex requirements into intuitive, accessible, and
-                        visually appealing interfaces.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="support">
-        <div class="container">
-            <h2>Support</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <h3>How can I get help with my app?</h3>
-                    <p>Our support team is available via email at <a
-                            href="mailto:support@kilkalabs.com">support@kilkalabs.com</a>. We typically respond within
-                        1-2 business days. </p>
-                </div>
-                <div class="faq-item">
-                    <h3>What information should I include when reporting an issue?</h3>
-                    <p>Please include the app name, version number, your device model and operating system version, and
-                        a detailed description of the issue, including any error messages and steps to reproduce the
-                        problem.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" style="background-color: white;">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-form">
-                <h3>Get in Touch</h3>
-                <p>We're here to answer your questions and address your concerns. Please reach out to us using one of
-                    the following email addresses:</p>
-
-                <div class="contact-options">
-                    <div class="contact-option">
-                        <h4>General Inquiries</h4>
-                        <p><a href="mailto:info@kilkalabs.com">info@kilkalabs.com</a></p>
+        <section id="services" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Services</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-100 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Mobile Application Development</h3>
+                        <p>Custom iOS and Android applications built with the latest technologies to meet your business
+                            needs and provide exceptional user experiences.</p>
                     </div>
-
-                    <div class="contact-option">
-                        <h4>Technical Support</h4>
-                        <p><a href="mailto:support@kilkalabs.com">support@kilkalabs.com</a></p>
+                    <div class="bg-gray-100 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">UX/UI Design</h3>
+                        <p>User-centered design that transforms complex requirements into intuitive, accessible, and
+                            visually appealing interfaces.</p>
                     </div>
                 </div>
-
-                <p>When contacting us, please include relevant details about your inquiry to help us assist you more
-                    efficiently.</p>
-                <p>We aim to respond to all inquiries within 1-2 business days.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>KilkaLabs OU</h3>
-                    <p>Building innovative solutions for tomorrow's challenges.</p>
-                    <p>Tallinn, Estonia</p>
+        <section id="support" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Support</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                        <h3 class="text-xl font-semibold mb-2">How can I get help with my app?</h3>
+                        <p>Our support team is available via email at <a href="mailto:support@kilkalabs.com"
+                                class="text-blue-500 hover:underline">support@kilkalabs.com</a>. We typically respond
+                            within 1-2 business days.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">What information should I include when reporting an
+                            issue?</h3>
+                        <p>Please include the app name, version number, your device model and operating system version,
+                            and a detailed description of the issue, including any error messages and steps to reproduce
+                            the problem.</p>
+                    </div>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <!-- <li><a href="#about">About</a></li> -->
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#support">Support</a></li>
-                        <!-- <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms of Service</a></li> -->
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Contact Us</h2>
+                <div class="max-w-3xl mx-auto bg-gray-100 p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Get in Touch</h3>
+                    <p class="mb-6">We're here to answer your questions and address your concerns. Please reach out to
+                        us using one of the following email addresses:</p>
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="text-center">
+                            <h4 class="font-semibold text-lg">General Inquiries</h4>
+                            <a href="mailto:info@kilkalabs.com"
+                                class="text-blue-500 hover:underline">info@kilkalabs.com</a>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="font-semibold text-lg">Technical Support</h4>
+                            <a href="mailto:support@kilkalabs.com"
+                                class="text-blue-500 hover:underline">support@kilkalabs.com</a>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600">When contacting us, please include relevant details about your
+                        inquiry to help us assist you more efficiently. We aim to respond to all inquiries within 1-2
+                        business days.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-10">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">KilkaLabs OU</h3>
+                    <p class="text-gray-400">Building innovative solutions for tomorrow's challenges.</p>
+                    <p class="text-gray-400 mt-2">Tallinn, Estonia</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="#support" class="text-gray-400 hover:text-white">Support</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Contact</h3>
-                    <p>Email: <a href="mailto:info@kilkalabs.com">info@kilkalabs.com</a></p>
-                    <p>Support: <a href="mailto:support@kilkalabs.com">support@kilkalabs.com</a></p>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <p class="text-gray-400">Email: <a href="mailto:info@kilkalabs.com"
+                            class="hover:text-white">info@kilkalabs.com</a></p>
+                    <p class="text-gray-400">Support: <a href="mailto:support@kilkalabs.com"
+                            class="hover:text-white">support@kilkalabs.com</a></p>
                 </div>
             </div>
-            <div class="footer-bottom">
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
                 <p>&copy;
                     <script>document.write(new Date().getFullYear());</script> KilkaLabs OU. All rights reserved.
                 </p>
             </div>
         </div>
     </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileDropdownButton = document.getElementById('mobile-dropdown-button');
+        const mobileDropdownMenu = document.getElementById('mobile-dropdown-menu');
+        const desktopDropdownButton = document.getElementById('desktop-dropdown-button');
+        const desktopDropdownMenu = document.getElementById('desktop-dropdown-menu');
+
+        // Mobile menu toggle
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Mobile dropdown toggle
+        mobileDropdownButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileDropdownMenu.classList.toggle('hidden');
+        });
+
+        // Desktop dropdown functionality
+        let desktopDropdownTimeout;
+
+        desktopDropdownButton.addEventListener('mouseenter', () => {
+            clearTimeout(desktopDropdownTimeout);
+            desktopDropdownMenu.classList.remove('hidden');
+        });
+
+        desktopDropdownButton.addEventListener('mouseleave', () => {
+            desktopDropdownTimeout = setTimeout(() => {
+                desktopDropdownMenu.classList.add('hidden');
+            }, 100);
+        });
+
+        desktopDropdownMenu.addEventListener('mouseenter', () => {
+            clearTimeout(desktopDropdownTimeout);
+        });
+
+        desktopDropdownMenu.addEventListener('mouseleave', () => {
+            desktopDropdownMenu.classList.add('hidden');
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+            if (!desktopDropdownButton.contains(e.target) && !desktopDropdownMenu.contains(e.target)) {
+                desktopDropdownMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
 </body>
 
 </html>
