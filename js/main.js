@@ -17,8 +17,8 @@ if (copyrightYear) {
 // Mobile menu toggle
 if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener('click', () => {
-        const isHidden = mobileMenu.classList.toggle('hidden');
-        mobileMenuButton.setAttribute('aria-expanded', !isHidden);
+        const isShown = mobileMenu.classList.toggle('show');
+        mobileMenuButton.setAttribute('aria-expanded', isShown);
     });
 }
 
@@ -26,8 +26,8 @@ if (mobileMenuButton && mobileMenu) {
 if (mobileDropdownButton && mobileDropdownMenu) {
     mobileDropdownButton.addEventListener('click', (e) => {
         e.stopPropagation();
-        const isHidden = mobileDropdownMenu.classList.toggle('hidden');
-        mobileDropdownButton.setAttribute('aria-expanded', !isHidden);
+        const isShown = mobileDropdownMenu.classList.toggle('show');
+        mobileDropdownButton.setAttribute('aria-expanded', isShown);
     });
 }
 
@@ -37,13 +37,13 @@ if (desktopDropdownButton && desktopDropdownMenu) {
 
     desktopDropdownButton.addEventListener('mouseenter', () => {
         clearTimeout(desktopDropdownTimeout);
-        desktopDropdownMenu.classList.remove('hidden');
+        desktopDropdownMenu.classList.add('show');
         desktopDropdownButton.setAttribute('aria-expanded', 'true');
     });
 
     desktopDropdownButton.addEventListener('mouseleave', () => {
         desktopDropdownTimeout = setTimeout(() => {
-            desktopDropdownMenu.classList.add('hidden');
+            desktopDropdownMenu.classList.remove('show');
             desktopDropdownButton.setAttribute('aria-expanded', 'false');
         }, 100);
     });
@@ -53,7 +53,7 @@ if (desktopDropdownButton && desktopDropdownMenu) {
     });
 
     desktopDropdownMenu.addEventListener('mouseleave', () => {
-        desktopDropdownMenu.classList.add('hidden');
+        desktopDropdownMenu.classList.remove('show');
         desktopDropdownButton.setAttribute('aria-expanded', 'false');
     });
 }
@@ -62,13 +62,13 @@ if (desktopDropdownButton && desktopDropdownMenu) {
 document.addEventListener('click', (e) => {
     if (mobileMenu && mobileMenuButton) {
         if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('show');
             mobileMenuButton.setAttribute('aria-expanded', 'false');
         }
     }
     if (desktopDropdownButton && desktopDropdownMenu) {
         if (!desktopDropdownButton.contains(e.target) && !desktopDropdownMenu.contains(e.target)) {
-            desktopDropdownMenu.classList.add('hidden');
+            desktopDropdownMenu.classList.remove('show');
             desktopDropdownButton.setAttribute('aria-expanded', 'false');
         }
     }

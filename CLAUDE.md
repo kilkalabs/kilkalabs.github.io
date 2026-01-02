@@ -10,9 +10,18 @@ This is a GitHub Pages static website for KilkaLabs OU, a mobile app development
 
 **Single-Page Application (SPA)**: The entire site is contained in `index.html` with vanilla JavaScript for interactivity. No build system or framework is used.
 
-**Styling**: Uses Tailwind CSS loaded via CDN (`https://cdn.tailwindcss.com`). All styles are applied through Tailwind utility classes directly in the HTML.
+**Styling**:
+- Uses Pico CSS v2 (minimal, semantic CSS framework) loaded via CDN
+- Custom styles in `/css/custom.css` for component-specific designs
+- Semantic HTML approach - minimal classes, relies on element selectors
+- No build process required
 
-**Analytics**: Google Analytics is integrated with tracking ID `G-R077NKJ12M`.
+**JavaScript**:
+- Vanilla JavaScript in `/js/main.js` (loaded with `defer` attribute)
+- Handles navigation menu toggles, dropdowns, and interactive elements
+- Copyright year auto-update
+
+**Analytics**: Google Analytics is integrated with tracking ID `G-R077NKJ12M` (loaded at end of body for performance).
 
 **SEO Structure**:
 - Comprehensive meta tags for SEO, Open Graph, and Twitter Cards
@@ -25,31 +34,58 @@ This is a GitHub Pages static website for KilkaLabs OU, a mobile app development
 
 **Navigation**:
 - Responsive header with mobile hamburger menu
-- Desktop dropdown menu for "Our Apps" section (hover-based)
-- Mobile dropdown menu (click-based)
-- JavaScript handles menu toggling and dropdown behavior
+- Desktop dropdown menu for "Our Apps" section (hover-based, uses `.dropdown` and `.dropdown-menu` classes)
+- Mobile dropdown menu (click-based, uses `.mobile-dropdown-menu` class)
+- JavaScript toggles `.show` class for visibility
 
 **Sections**:
-- Hero section with call-to-action
-- Services section (Mobile App Development, UX/UI Design)
-- Support section with FAQ-style content
-- Contact section with email addresses for general inquiries and support
+- Hero section (`.hero` class) with call-to-action
+- Services section (`.services-grid` for 2-column responsive layout)
+- Support section (`.faq-article` for individual FAQ items)
+- Contact section (`.contact-box` and `.contact-grid` for layout)
 
 **Contact Information**:
 - General inquiries: info@kilkalabs.com
 - Technical support: support@kilkalabs.com
+
+## CSS Architecture
+
+**Color Scheme** (defined in `/css/custom.css`):
+- Primary: `#3b82f6` (blue)
+- Dark background: `#1f2937` (gray-800)
+- Light background: `#f3f4f6` (gray-100)
+- Text colors: primary (#1f2937), secondary (#4b5563), muted (#9ca3af)
+
+**Key Classes**:
+- `.hero` - Hero section styling
+- `.section-heading` - Section title styling
+- `.services-grid` - 2-column responsive grid
+- `.service-card` - Service card styling
+- `.faq-article` - FAQ article styling
+- `.contact-box` - Contact section container
+- `.footer-grid` - 3-column footer layout
+- `.dropdown` / `.dropdown-menu` - Dropdown functionality
+- `.mobile-menu` / `.show` - Mobile menu visibility
+
+**Responsive Design**:
+- Mobile-first approach
+- Breakpoint at 768px (tablets/desktop)
+- Grids stack on mobile, multi-column on desktop
 
 ## Development Workflow
 
 Since this is a static site hosted on GitHub Pages:
 
 1. **Local Testing**: Open `index.html` directly in a browser or use any local HTTP server (e.g., `python -m http.server` or `npx serve`)
-2. **Deployment**: Push changes to the `main` branch to deploy to GitHub Pages
-3. **Domain**: The site is served at kilkalabs.com via the CNAME configuration
+2. **CSS Changes**: Edit `/css/custom.css` - no build step needed
+3. **JavaScript Changes**: Edit `/js/main.js` - no transpilation needed
+4. **Deployment**: Push changes to the `main` branch to deploy to GitHub Pages
+5. **Domain**: The site is served at kilkalabs.com via the CNAME configuration
 
 ## Important Notes
 
-- No build process required - all changes are direct HTML/CSS/JS edits
-- Tailwind is loaded via CDN - no compilation needed
+- **No build process required** - all changes are direct HTML/CSS/JS edits
+- Pico CSS provides base styling; custom components use semantic classes
 - Update `sitemap.xml` `<lastmod>` dates when making significant content changes
 - The site links to an external app: "In The Mood" at https://inthemood.kilkalabs.com
+- JavaScript uses `.show` class pattern for visibility toggles (not `.hidden`)
