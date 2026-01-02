@@ -30,8 +30,16 @@
     <meta name="twitter:description"
         content="Building innovative mobile applications and UX/UI design solutions in Estonia.">
 
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1f2937">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Performance: Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -57,38 +65,30 @@
     }
     </script>
 
+    <!-- Tailwind CSS via CDN (Development mode - consider build process for production) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Analytics Placeholder -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R077NKJ12M"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-R077NKJ12M');
-    </script>
 </head>
 
 <body class="bg-gray-100 text-gray-800">
 
     <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-gray-800">KilkaLabs</a>
+            <a href="/" class="text-2xl font-bold text-gray-800">KilkaLabs</a>
             <nav class="hidden md:flex items-center space-x-6">
-                <a href="index.html" class="text-gray-600 hover:text-blue-500">Home</a>
+                <a href="/" class="text-gray-600 hover:text-blue-500">Home</a>
                 <div class="relative group">
                     <button id="desktop-dropdown-button"
-                        class="text-gray-600 hover:text-blue-500 focus:outline-none flex items-center">
+                        class="text-gray-600 hover:text-blue-500 focus:outline-none flex items-center"
+                        aria-haspopup="menu" aria-expanded="false">
                         Our Apps
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
                             </path>
                         </svg>
                     </button>
                     <div id="desktop-dropdown-menu"
                         class="absolute hidden bg-white shadow-lg rounded-md py-2 w-48 top-full left-0 z-10">
-                        <a href="https://inthemood.kilkalabs.com" target="_blank"
+                        <a href="https://inthemood.kilkalabs.com" target="_blank" rel="noreferrer noopener"
                             class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">In The Mood</a>
                     </div>
                 </div>
@@ -96,21 +96,22 @@
                 <a href="#support" class="text-gray-600 hover:text-blue-500">Support</a>
                 <a href="#contact" class="text-gray-600 hover:text-blue-500">Contact</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden flex items-center">
+            <button id="mobile-menu-button" class="md:hidden flex items-center" aria-label="Toggle navigation menu" aria-expanded="false">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
                     </path>
                 </svg>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden">
-            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Home</a>
+            <a href="/" class="block py-2 px-4 text-sm hover:bg-gray-200">Home</a>
             <div class="relative">
                 <button id="mobile-dropdown-button"
-                    class="w-full text-left block py-2 px-4 text-sm hover:bg-gray-200">Our Apps</button>
+                    class="w-full text-left block py-2 px-4 text-sm hover:bg-gray-200"
+                    aria-haspopup="menu" aria-expanded="false">Our Apps</button>
                 <div id="mobile-dropdown-menu" class="hidden bg-gray-100">
-                    <a href="https://inthemood.kilkalabs.com" target="_blank"
+                    <a href="https://inthemood.kilkalabs.com" target="_blank" rel="noreferrer noopener"
                         class="block py-2 px-8 text-sm hover:bg-gray-200">InTheMood</a>
                 </div>
             </div>
@@ -153,26 +154,26 @@
             </div>
         </section>
 
-        <section id="support" class="py-20" aria-labelledby="support-heading"></section>
-        <div class="container mx-auto px-6">
-            <h2 id="support-heading" class="text-3xl font-bold text-center text-gray-800 mb-12">Support</h2>
-            <div class="max-w-3xl mx-auto">
-                <article class="bg-white p-6 rounded-lg shadow-md mb-6">
-                    <h3 class="text-xl font-semibold mb-2">How can I get help with my app?</h3>
-                    <p>Our support team is available via email at <a href="mailto:support@kilkalabs.com"
-                            class="text-blue-500 hover:underline"
-                            aria-label="Email support team">support@kilkalabs.com</a>. We typically respond
-                        within 1-2 business days.</p>
-                </article>
-                <article class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-2">What information should I include when reporting an
-                        issue?</h3>
-                    <p>Please include the app name, version number, your device model and operating system version,
-                        and a detailed description of the issue, including any error messages and steps to reproduce
-                        the problem.</p>
-                </article>
+        <section id="support" class="py-20" aria-labelledby="support-heading">
+            <div class="container mx-auto px-6">
+                <h2 id="support-heading" class="text-3xl font-bold text-center text-gray-800 mb-12">Support</h2>
+                <div class="max-w-3xl mx-auto">
+                    <article class="bg-white p-6 rounded-lg shadow-md mb-6">
+                        <h3 class="text-xl font-semibold mb-2">How can I get help with my app?</h3>
+                        <p>Our support team is available via email at <a href="mailto:support@kilkalabs.com"
+                                class="text-blue-500 hover:underline"
+                                aria-label="Email support team">support@kilkalabs.com</a>. We typically respond
+                            within 1-2 business days.</p>
+                    </article>
+                    <article class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">What information should I include when reporting an
+                            issue?</h3>
+                        <p>Please include the app name, version number, your device model and operating system version,
+                            and a detailed description of the issue, including any error messages and steps to reproduce
+                            the problem.</p>
+                    </article>
+                </div>
             </div>
-        </div>
         </section>
 
         <section id="contact" class="py-20 bg-white" aria-labelledby="contact-heading">
@@ -213,7 +214,7 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="/" class="text-gray-400 hover:text-white">Home</a></li>
                         <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
                         <li><a href="#support" class="text-gray-400 hover:text-white">Support</a></li>
                     </ul>
@@ -227,63 +228,21 @@
                 </div>
             </div>
             <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
-                <p>&copy;
-                    <script>document.write(new Date().getFullYear());</script> KilkaLabs OU. All rights reserved.
-                </p>
+                <p>&copy; <span id="copyright-year"></span> KilkaLabs OU. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Main JavaScript -->
+    <script defer src="/js/main.js"></script>
+
+    <!-- Google Analytics - Loaded at end for performance -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R077NKJ12M"></script>
     <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileDropdownButton = document.getElementById('mobile-dropdown-button');
-        const mobileDropdownMenu = document.getElementById('mobile-dropdown-menu');
-        const desktopDropdownButton = document.getElementById('desktop-dropdown-button');
-        const desktopDropdownMenu = document.getElementById('desktop-dropdown-menu');
-
-        // Mobile menu toggle
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Mobile dropdown toggle
-        mobileDropdownButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            mobileDropdownMenu.classList.toggle('hidden');
-        });
-
-        // Desktop dropdown functionality
-        let desktopDropdownTimeout;
-
-        desktopDropdownButton.addEventListener('mouseenter', () => {
-            clearTimeout(desktopDropdownTimeout);
-            desktopDropdownMenu.classList.remove('hidden');
-        });
-
-        desktopDropdownButton.addEventListener('mouseleave', () => {
-            desktopDropdownTimeout = setTimeout(() => {
-                desktopDropdownMenu.classList.add('hidden');
-            }, 100);
-        });
-
-        desktopDropdownMenu.addEventListener('mouseenter', () => {
-            clearTimeout(desktopDropdownTimeout);
-        });
-
-        desktopDropdownMenu.addEventListener('mouseleave', () => {
-            desktopDropdownMenu.classList.add('hidden');
-        });
-
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-                mobileMenu.classList.add('hidden');
-            }
-            if (!desktopDropdownButton.contains(e.target) && !desktopDropdownMenu.contains(e.target)) {
-                desktopDropdownMenu.classList.add('hidden');
-            }
-        });
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-R077NKJ12M');
     </script>
 
 </body>
