@@ -23,12 +23,16 @@
     <meta property="og:url" content="https://kilkalabs.com/">
     <meta property="og:site_name" content="KilkaLabs OU">
     <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://kilkalabs.com/images/logo.webp">
+    <meta property="og:image:alt" content="KilkaLabs - Mobile App Development & UX/UI Design in Estonia">
 
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="KilkaLabs OU - Mobile App Development & UX/UI Design">
     <meta name="twitter:description"
         content="Building innovative mobile applications and UX/UI design solutions in Estonia.">
+    <meta name="twitter:image" content="https://kilkalabs.com/images/logo.webp">
+    <meta name="twitter:image:alt" content="KilkaLabs - Mobile App Development & UX/UI Design in Estonia">
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#1f2937">
@@ -45,23 +49,43 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "LocalBusiness",
         "name": "KilkaLabs OU",
         "url": "https://kilkalabs.com",
-        "logo": "https://kilkalabs.com/logo.png",
+        "logo": "https://kilkalabs.com/images/logo.webp",
+        "image": "https://kilkalabs.com/images/og-image.png",
         "description": "KilkaLabs creates cutting-edge mobile applications and UX/UI design services that help businesses and individuals thrive in a digital world.",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Tallinn",
-            "addressCountry": "Estonia"
+            "addressCountry": "EE"
         },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "",
-            "contactType": "customer service",
-            "email": "info@kilkalabs.com"
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "59.437",
+            "longitude": "24.7536"
         },
-        "sameAs": []
+        "areaServed": {
+            "@type": "Country",
+            "name": "Estonia"
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "email": "info@kilkalabs.com",
+                "availableLanguage": ["English", "Estonian"]
+            },
+            {
+                "@type": "ContactPoint",
+                "contactType": "technical support",
+                "email": "support@kilkalabs.com",
+                "availableLanguage": ["English", "Estonian"]
+            }
+        ],
+        "sameAs": [
+        "https://github.com/kilkalabs"
+        ]
     }
     </script>
 
@@ -72,30 +96,38 @@
 
 <body>
 
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header>
         <div class="container">
             <a href="/" class="logo">KilkaLabs</a>
             <nav>
                 <a href="/">Home</a>
                 <div class="dropdown">
-                    <button id="desktop-dropdown-button" class="dropdown-button"
-                        aria-haspopup="menu" aria-expanded="false">
+                    <button id="desktop-dropdown-button" class="dropdown-button" aria-haspopup="menu"
+                        aria-expanded="false">
                         Our Apps
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
                         </svg>
                     </button>
                     <div id="desktop-dropdown-menu" class="dropdown-menu">
-                        <a href="https://inthemood.kilkalabs.com" target="_blank" rel="noreferrer noopener">In The Mood</a>
+                        <a href="https://inthemood.kilkalabs.com" target="_blank" rel="noreferrer noopener">In The
+                            Mood</a>
                     </div>
                 </div>
                 <a href="#services">Services</a>
                 <a href="#support">Support</a>
                 <a href="#contact">Contact</a>
             </nav>
-            <button id="mobile-menu-button" class="mobile-menu-button" aria-label="Toggle navigation menu" aria-expanded="false">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            <button id="mobile-menu-button" class="mobile-menu-button" aria-label="Toggle navigation menu"
+                aria-expanded="false">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
                 </svg>
             </button>
         </div>
@@ -113,7 +145,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="hero" aria-label="Hero section">
             <div class="container">
                 <h1>Building innovative solutions for tomorrow's challenges</h1>
